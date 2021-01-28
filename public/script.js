@@ -1,6 +1,8 @@
-//DOM elements
+//DOM elements references
 const video_grid = document.querySelector(".video-grid");
 
+//socket variable
+let socket = io('/')
 
 //Creating video element dynamically
 const myVideo = document.createElement("video");
@@ -25,3 +27,11 @@ const addVideoStream = (video, stream)=>{
    video_grid.append(video);
    
 }
+
+
+//emitting socket event
+socket.emit('join-room', ROOM_ID)
+
+socket.on("user-connected", (roomId)=>{
+    console.log('user connected', roomId)
+})
