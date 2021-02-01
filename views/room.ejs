@@ -7,6 +7,8 @@
     <script>
       const ROOM_ID = "<%= roomId %>";
     </script>
+
+    <link rel="icon" href="/public/favicon.ico" />
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
@@ -39,9 +41,10 @@
       }
       video {
         height: 300px;
-        width: 400px;
+        width: 350px;
         object-fit: cover;
         padding: 8px;
+        border-radius: 30px;
       }
     </style>
   </head>
@@ -77,12 +80,16 @@
               <i class="fas fa-user-friends"></i>
               <span>Participants</span>
             </div>
-            <div class="main__controls__button">
+            <div class="main__controls__button" id="chatBtn">
               <i class="fas fa-comment-alt"></i>
               <span>Chat</span>
             </div>
           </div>
-          <div class="main__controls__block">
+          <div
+            class="main__controls__block"
+            id="leave_meeting"
+            onclick="close_window();return false;"
+          >
             <div class="main__controls__button">
               <span class="leave_meeting">Leave Meeting</span>
             </div>

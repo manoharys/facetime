@@ -136,3 +136,17 @@ const setPlayVideo = () => {
   `;
   document.querySelector(".main__video_button").innerHTML = html;
 };
+
+//getting focus
+document.getElementById("chatBtn").addEventListener("click", () => {
+  document.getElementById("chat_message").focus();
+});
+
+//leave meeting
+
+function close_window() {
+  if (confirm("Are you sure you want to leave this meeting?")) {
+    var win = window.open("about:blank", "_self");
+    win.close();
+  }
+}

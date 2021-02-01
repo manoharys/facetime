@@ -11,6 +11,7 @@ const peerServer = ExpressPeerServer(server, {
 const { v4: uuidV4 } = require("uuid");
 
 app.use("/peerjs", peerServer);
+app.use("/public", express.static('public')); 
 
 app.set("view engine", "ejs");
 app.use(express.static("public"));
@@ -39,4 +40,4 @@ io.on("connection", (socket) => {
   });
 });
 
-server.listen(process.env.PORT || 3000);
+server.listen(process.env.PORT || 3001);

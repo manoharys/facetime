@@ -20,10 +20,12 @@
     justify-content: center;
     align-items: center;
     padding: 40px;
+    overflow: scroll;
 }
 
 .main__controls {
     background-color: #1C1E20;
+    position:sticky;
 }
 
 .main__right {
@@ -102,3 +104,14 @@
     color: #CC3B33;
 }
 
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.main__videos::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .main__videos {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
